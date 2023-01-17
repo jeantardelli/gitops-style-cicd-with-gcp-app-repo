@@ -27,11 +27,10 @@ steps:
       - 'SHORT_SHA=${SHORT_SHA}'
 
   # Clones the env repo
-  - name: "gcr.io/cloud-builders/gcloud"
+  - name: "gcr.io/cloud-builders/git"
     id: Clone env repo
     entrypoint: 'bash'
     args: ['./scripts/clone-env-repo.sh']
-
 
 images:
 - '${LOCATION}-docker.pkg.dev/${PROJECT_ID}/my-repository/hello-cloudbuild:${SHORT_SHA}'
