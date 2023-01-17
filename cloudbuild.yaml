@@ -14,7 +14,7 @@ steps:
     env:
       - 'PROJECT_ID=${PROJECT_ID}'
       - 'LOCATION=${LOCATION}'
-      - 'SHORT_SHA=${SHORT_SHA}
+      - 'SHORT_SHA=${SHORT_SHA}'
 
   # Docker push to Artifact Registry
   - name: "gcr.io/cloud-builders/gcloud"
@@ -24,7 +24,7 @@ steps:
     env:
       - 'PROJECT_ID=${PROJECT_ID}'
       - 'LOCATION=${LOCATION}'
-      - 'SHORT_SHA=${SHORT_SHA}
+      - 'SHORT_SHA=${SHORT_SHA}'
 
 images:
 - '${LOCATION}-docker.pkg.dev/${PROJECT_ID}/my-repository/hello-cloudbuild:${SHORT_SHA}'
