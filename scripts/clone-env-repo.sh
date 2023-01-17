@@ -1,5 +1,6 @@
 #!/bin/bash
 
+ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 git clone git@github.com:jeantardelli/gitops-style-cicd-with-gcp-env-repo.git && \
 cd gitops-stye-cicd-with-gcp-env-repo && \
 git checkout candidate && \
