@@ -4,7 +4,7 @@ steps:
   - name: "python:3.7-slim"
     id: Test
     entrypoint: 'bash'
-    args: ['./scripts/install-dependencies.sh', '&&', './scripts/test-app.sh']
+    args: ['./scripts/install-app-dependencies.sh', '&&', './scripts/test-app.sh']
 
   # Docker build
   - name: "gcr.io/cloud-builders/docker"
