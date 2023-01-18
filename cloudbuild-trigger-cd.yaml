@@ -41,9 +41,9 @@ steps:
     id: Clone env repo
     entrypoint: 'bash'
     args: ['./scripts/clone-env-repo.sh']
-  volumes:
-  - name: 'ssh'
-    path: /root/.ssh
+    volumes:
+    - name: 'ssh'
+      path: /root/.ssh
 
   # This step generates the new manifest
   - name: 'gcr.io/cloud-builders/gcloud'
