@@ -6,3 +6,5 @@ It is necessary to configure Cloud Build to automatically run a small unit test,
 ## Resources
 
 [GitOps Style continuous delivery with Cloud Build](https://cloud.google.com/kubernetes-engine/docs/tutorials/gitops-cloud-build)
+
+[Accessing GitHub from a build via SSH keys](https://cloud.google.com/build/docs/access-github-from-build)
