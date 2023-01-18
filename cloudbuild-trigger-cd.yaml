@@ -32,12 +32,25 @@ steps:
     entrypoint: 'bash'
     args: ['./scripts/clone-env-repo.sh']
 
-
   # This step generates the new manifest
   - name: 'gcr.io/cloud-builders/gcloud'
     id: Generate manifest
     entrypoint: 'bash'
     args: ['./scripts/generate-new-manifest.sh']
+    env:
+      - 'PROJECT_ID=${PROJECT_ID}'
+      - 'LOCATION=${LOCATION}'
+      - 'SHORT_SHA=${SHORT_SHA}'
+
+  # This step pushes the manifest back to hello-cloudbuild-env
+  - name: 'gcr.io/cloud-builders/gcloud'
+    id: Push manifest
+    entrypoint: 'bash'
+    args: ['./scripts/pushes-manifest-back-to-env-repo.sh']
+    env:
+      - 'PROJECT_ID=${PROJECT_ID}'
+      - 'LOCATION=${LOCATION}'
+      - 'SHORT_SHA=${SHORT_SHA}'
 
 images:
 - '${LOCATION}-docker.pkg.dev/${PROJECT_ID}/my-repository/hello-cloudbuild:${SHORT_SHA}'
