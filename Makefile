@@ -7,6 +7,9 @@ build-docker-image:
 clone-env-repo:
 	bash ./scripts/clone-env-repo.sh
 
+generate-new-manifest:
+	bash ./scripts/generate-new-manifest.sh
+
 install-app-dependencies:
 	bash ./scripts/install-app-dependencies.sh
 

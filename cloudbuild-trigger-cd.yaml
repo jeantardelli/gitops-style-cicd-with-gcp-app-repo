@@ -32,5 +32,12 @@ steps:
     entrypoint: 'bash'
     args: ['./scripts/clone-env-repo.sh']
 
+
+  # This step generates the new manifest
+  - name: 'gcr.io/cloud-builders/gcloud'
+    id: Generate manifest
+    entrypoint: 'bash'
+    args: ['./scripts/generate-new-manifest.sh']
+
 images:
 - '${LOCATION}-docker.pkg.dev/${PROJECT_ID}/my-repository/hello-cloudbuild:${SHORT_SHA}'
