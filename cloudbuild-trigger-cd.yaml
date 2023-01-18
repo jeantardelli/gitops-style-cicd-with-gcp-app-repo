@@ -26,11 +26,25 @@ steps:
       - 'LOCATION=${LOCATION}'
       - 'SHORT_SHA=${SHORT_SHA}'
 
+  # Access the id_github file from Secret Manager, and setup SSH
+  steps:
+  - name: 'gcr.io/cloud-builders/git'
+    id: Read Secret Manager
+    secretEnv: ['SSH_KEY']
+    entrypoint: 'bash'
+    args: ['./scripts/setup-ssh.sh']
+    volumes:
+    - name: 'ssh'
+      path: /root/.ssh
+
   # Clones the env repo
   - name: "gcr.io/cloud-builders/git"
     id: Clone env repo
     entrypoint: 'bash'
     args: ['./scripts/clone-env-repo.sh']
+  volumes:
+  - name: 'ssh'
+    path: /root/.ssh
 
   # This step generates the new manifest
   - name: 'gcr.io/cloud-builders/gcloud'
@@ -54,3 +68,8 @@ steps:
 
 images:
 - '${LOCATION}-docker.pkg.dev/${PROJECT_ID}/my-repository/hello-cloudbuild:${SHORT_SHA}'
+
+availableSecrets:
+  secretManager:
+  - versionName: projects/${PROJECT_ID}/secrets/cloudbuild-github-secret-key/versions/latest
+    env: 'SSH_KEY'

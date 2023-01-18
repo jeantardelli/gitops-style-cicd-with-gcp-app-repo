@@ -4,6 +4,9 @@ create-cloud-build-from-latest-commit:
 build-docker-image:
 	bash ./scripts/build-docker-image.sh
 
+setup-ssh:
+	bash ./scripts/setup-ssh.sh
+
 clone-env-repo:
 	bash ./scripts/clone-env-repo.sh
 
