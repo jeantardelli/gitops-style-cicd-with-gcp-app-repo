@@ -1,6 +1,5 @@
 #!/bin/bash
 
-cat /root/.ssh/id_rsa
 git clone git@github.com:jeantardelli/gitops-style-cicd-with-gcp-env-repo.git && \
 cd gitops-style-cicd-with-gcp-env-repo && \
 git checkout candidate && \
