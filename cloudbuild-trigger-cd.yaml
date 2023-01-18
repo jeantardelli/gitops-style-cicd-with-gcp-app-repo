@@ -27,7 +27,6 @@ steps:
       - 'SHORT_SHA=${SHORT_SHA}'
 
   # Access the id_github file from Secret Manager, and setup SSH
-  steps:
   - name: 'gcr.io/cloud-builders/git'
     id: Read Secret Manager
     secretEnv: ['SSH_KEY']
