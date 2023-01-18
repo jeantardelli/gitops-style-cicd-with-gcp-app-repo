@@ -60,6 +60,9 @@ steps:
       - 'PROJECT_ID=${PROJECT_ID}'
       - 'LOCATION=${LOCATION}'
       - 'SHORT_SHA=${SHORT_SHA}'
+    volumes:
+    - name: 'ssh'
+      path: /root/.ssh
 
   # This step pushes the manifest back to hello-cloudbuild-env
   - name: 'gcr.io/cloud-builders/gcloud'
@@ -70,6 +73,9 @@ steps:
       - 'PROJECT_ID=${PROJECT_ID}'
       - 'LOCATION=${LOCATION}'
       - 'SHORT_SHA=${SHORT_SHA}'
+    volumes:
+    - name: 'ssh'
+      path: /root/.ssh
 
 images:
 - '${LOCATION}-docker.pkg.dev/${PROJECT_ID}/my-repository/hello-cloudbuild:${SHORT_SHA}'
