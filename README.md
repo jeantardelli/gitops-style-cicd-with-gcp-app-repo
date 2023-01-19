@@ -8,6 +8,12 @@ It is necessary to configure Cloud Build to automatically run a small unit test,
 ![image](https://user-images.githubusercontent.com/42701946/213379111-5d04dbfc-ef70-437a-871e-fd3679c22df2.png)
 
 
+## Repo
+
+This repo follows the GitOps Style CD with Cloud Build tutorial but instead of using Cloud Source Repositories, it uses GitHub.
+
+This pipeline does not implement a validation mechanism before the deployment. If you use GitHub, Bitbucket, or GitLab, you can modify the pipeline to use a Pull Request for this purpose.
+
 ## Resources
 
 [GitOps Style continuous delivery with Cloud Build](https://cloud.google.com/kubernetes-engine/docs/tutorials/gitops-cloud-build)
