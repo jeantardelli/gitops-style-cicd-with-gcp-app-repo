@@ -3,6 +3,12 @@ This repo contains code that creates a continuous integration and delivery (CI/C
 
 It is necessary to configure Cloud Build to automatically run a small unit test, build the container image, and then push it to Artifact Registry. Pushing a new commit to Cloud Source Repositories automatically triggers this pipeline. The cloudbuild.yaml file included in the code is the pipeline's configuration.
 
+
+This tutorial uses two Git repositories:
+
+- app repository: contains the source code of the application itself
+- env repository: contains the manifests for the Kubernetes Deployment
+
 ![image](https://user-images.githubusercontent.com/42701946/213378048-f5317f6e-1eff-4158-be68-c1c3b604baa0.png)
 
 ![image](https://user-images.githubusercontent.com/42701946/213379111-5d04dbfc-ef70-437a-871e-fd3679c22df2.png)
