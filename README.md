@@ -9,7 +9,7 @@ This tutorial uses two Git repositories:
 - app repository: contains the source code of the application itself
 - env repository: contains the manifests for the Kubernetes Deployment
 
-![image](https://user-images.githubusercontent.com/42701946/213378048-f5317f6e-1eff-4158-be68-c1c3b604baa0.png)
+![image](https://user-images.githubusercontent.com/42701946/213552719-d5ed02b1-5555-47ed-b547-def36df4a3ad.png)
 
 ![image](https://user-images.githubusercontent.com/42701946/213379111-5d04dbfc-ef70-437a-871e-fd3679c22df2.png)
 
